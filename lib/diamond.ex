@@ -1,13 +1,18 @@
 defmodule Diamond do
-  def build_shape(?A), do: "A\n"
+  require Logger
+  def build_shape(?A), do: "A\n" 
   def build_shape(?B) do
+    shape =
     """
      A\s
     B B
      A\s
     """
+    Logger.debug("\n#{shape}")
+    shape
   end
   def build_shape(?C) do
+    shape =
     """
     \s A \s
     \sB B\s
@@ -15,8 +20,11 @@ defmodule Diamond do
     \sB B\s
     \s A \s
     """
+    Logger.debug("\n#{shape}")
+    shape    
   end
   def build_shape(?J) do
+    shape =
     """
     \s        A        \s
     \s       B B       \s
@@ -38,7 +46,8 @@ defmodule Diamond do
     \s       B B       \s
     \s        A        \s
     """  
-
+    Logger.debug("\n#{shape}")
+    shape
   end
   def build_shape(_), do: "not valid"
 end
